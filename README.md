@@ -1,5 +1,7 @@
 # Morphine
 
+**NOTE: I am in the process of extracting dependency injection features from [Gaug.es](http://get.gaug.es). Currently, the only feature of this library is memoization. I am not dumb or inexperienced. I'm just not done yet.**
+
 Morphine is a lightweight dependency injection framework for Ruby. It uses a simple Ruby DSL to ease the pain of wiring your dependencies together.
 
 ## Usage
