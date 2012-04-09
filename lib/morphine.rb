@@ -14,6 +14,10 @@ module Morphine
       define_method name do
         dependencies[name] ||= instance_eval(&block)
       end
+
+      define_method "#{name}=" do |service|
+        dependencies[name] = service
+      end
     end
   end
 end

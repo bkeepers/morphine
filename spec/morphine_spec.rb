@@ -26,5 +26,10 @@ describe Morphine do
       Container().register(:service) { Struct.new(:client).new(client) }
       container.service.client.should == container.client
     end
+
+    it 'defines writer method to change service' do
+      container.client = 'new client'
+      container.client.should eq('new client')
+    end
   end
 end
