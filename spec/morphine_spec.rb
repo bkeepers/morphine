@@ -31,5 +31,10 @@ describe Morphine do
       container.client = 'new client'
       container.client.should eq('new client')
     end
+
+    it 'passes arguments through to the block' do
+      Container().register(:pass_through) { |argument| argument }
+      container.pass_through(:a).should == :a
+    end
   end
 end

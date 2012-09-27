@@ -11,8 +11,8 @@ module Morphine
 
   module ClassMethods
     def register(name, &block)
-      define_method name do
-        dependencies[name] ||= instance_eval(&block)
+      define_method name do |*args|
+        dependencies[name] ||= instance_exec(*args,&block)
       end
 
       define_method "#{name}=" do |service|
